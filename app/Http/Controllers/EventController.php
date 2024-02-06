@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
-use App\Models\Event;
 
 class EventController extends Controller
 {
@@ -15,7 +15,8 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        $events = Event::all();
+        return view("admin.event", compact("events"));
     }
 
     /**
