@@ -39,6 +39,15 @@
                                     <p class="text-center">No Tag #</p>
                                 @endif
                             </h6>
+                            <div class="col-4 d-flex justify-content-center py-1">
+                                <a class="btn btn-outline-info text-body"
+                                    href="{{ route('admin.events.edit', $event->id) }}">Modifica</a>
+                            </div>
+                            <form action="{{ route('admin.events.destroy', $event->id) }}" method='POST'>
+                                @csrf
+                                @method('DELETE')
+                                <input type="submit" value="delete">
+                            </form>
                             {{-- <a href="#" class="btn btn-primary">Go somewhere</a> --}}
                         </div>
                     </div>
